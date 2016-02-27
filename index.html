@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <link rel="stylesheet/less" href="style.less" type="text/css">
+    <link rel="stylesheet" href="http://mozilla.github.io/foxlight/dest/css/foxlight.css" type="text/css">
+
+    <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,300,500' rel='stylesheet' type='text/css'>
+
+    <script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="app.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      less = {
+        env: "development",
+        async: false,
+        fileAsync: false,
+        poll: 1000,
+        functions: {},
+        dumpLineNumbers: "comments",
+        relativeUrls: false
+      };
+    </script>
+    <script src="less.js"></script>
+    <meta name="viewport" content="width=320, user-scalable=no">
+  </head>
+
+  <body>
+
+     <div id="template-menu">
+       <a template="3-boxes" href="#">3-boxes</a>
+       <a template="resource-list" href="#">Resource list</a>
+       <a template="guide" href="#">Scrolling Guide</a>
+     </div>
+  </body>
+</html>
