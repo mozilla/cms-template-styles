@@ -7,15 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "live-server ./demo --watch=healthcheck --port=1980",
     "watch": "chokidar 'src' -c 'npm run build'",
-    "build": "npm-run-all --parallel build:** && npm run healthcheck",
-    "build:static": "mkdirp demo/ && ncp src demo",
+    "build": "mkdirp demo && npm-run-all --parallel build:** && npm run healthcheck",
+    "build:static": "ncp src demo",
     "build:scss": "node-sass src/templates/3-boxes/style.scss demo/templates/3-boxes/style.css",
+    "build:dependencies": "ncp node_modules/jquery/dist/jquery.min.js demo/jquery.min.js && ncp node_modules/foxlight/dest/css/foxlight.css demo/foxlight.css",
     "healthcheck": "date > demo/healthcheck.txt"
   },
   "author": "Mozilla",
   "license": "MPL-2.0",
   "dependencies": {
-    "foxlight": "https://github.com/mozilla/foxlight#gh-pages"
+    "foxlight": "https://github.com/mozilla/foxlight#gh-pages",
+    "jquery": "2.2.1"
   },
   "devDependencies": {
     "chokidar": "^1.4.2",
