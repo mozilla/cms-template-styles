@@ -11,7 +11,7 @@
     "build:static": "ncp src demo",
     "build:scss": "node-sass src/templates/3-boxes/style.scss demo/templates/3-boxes/style.css",
     "build:dependencies": "ncp node_modules/jquery/dist/jquery.min.js demo/jquery.min.js && ncp node_modules/foxlight/dest/css/foxlight.css demo/foxlight.css",
-    "healthcheck": "date > demo/healthcheck.txt"
+    "healthcheck": "node scripts/healthcheck.js > demo/healthcheck.txt"
   },
   "author": "Mozilla",
   "license": "MPL-2.0",
