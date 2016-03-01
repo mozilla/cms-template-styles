@@ -1,0 +1,143 @@
+article {
+  max-width: 750px;
+  min-width: 500px;
+  position: relative;
+  padding: 20px 0 40px 295px;
+  margin-right: 55px;
+  z-index: 1;
+}
+article .logo {
+  position: relative;
+  left: -12px;
+  width: 175px;
+  margin-bottom: 10px;
+}
+article .logo a img {
+  max-width: 100%;
+}
+article .logo a:hover {
+  background: none;
+  opacity: .8;
+}
+article h2 {
+  position: relative;
+  padding-top: 30px;
+}
+article h2:before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  top: -2px;
+  width: 50%;
+  background: #fbe4ca;
+  left: 25%;
+}
+article .example {
+  margin: 35px 0 40px 0;
+  background: #fdf0e2;
+  color: #e78412;
+  padding: 30px 35px;
+}
+aside {
+  z-index: 2;
+  width: 230px;
+  position: fixed;
+  top: 0;
+}
+aside:before {
+  background: #F09C3C;
+  content: "";
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 230px;
+  z-index: 1;
+}
+aside .image {
+  position: relative;
+  z-index: 2;
+  height: 150px;
+  width: 170px;
+  margin: 22px 0 0 30px;
+  background-image: url(templates/guide/images/web-lit-logo.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+aside .image img {
+  width: calc(100% - 20px);
+}
+/* Left-side Navigation */
+nav {
+  padding: 20px 0 25px 0;
+  list-style-type: none;
+  position: relative;
+  z-index: 2;
+}
+nav a:link,
+nav a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 18px 34px;
+  transition: background 0.05s ease-out;
+  font-size: 16px;
+  line-height: auto;
+}
+nav a:link:visited,
+nav a:visited {
+  color: rgba(255, 255, 255, 0.7);
+}
+nav a:link.selected,
+nav a.selected,
+nav a:link.selected:hover,
+nav a.selected:hover {
+  background: #e78412;
+  color: white;
+  font-weight: 500;
+}
+nav a:link:hover,
+nav a:hover {
+  background: #ee9024;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+nav a:link:after,
+nav a:after {
+  content: "";
+  background-color: #e78412;
+  background-image: url(templates/guide/images/nav-selected-indicator-mask.svg);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 15px;
+  position: absolute;
+  top: 0;
+  right: 0px;
+  opacity: 1;
+  width: 0px;
+  transition: all 0.075s ease-out;
+}
+nav a:link.selected,
+nav a.selected {
+  color: #ffffff;
+}
+nav a:link.selected:after,
+nav a.selected:after {
+  width: 15px;
+  right: -15px;
+}
+@media print {
+  aside {
+    display: none;
+  }
+  article {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+  }
+}

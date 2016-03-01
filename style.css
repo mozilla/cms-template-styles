@@ -1,0 +1,20 @@
+#template-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 100px;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999999999999;
+  padding: 10px;
+}
+#template-menu a {
+  margin: 0;
+  margin-bottom: 10px;
+  display: block;
+  color: white;
+  font-size: 12px;
+  line-height: 12px;
+}
+#template-menu a:last-child {
+  margin-bottom: 0;
+}

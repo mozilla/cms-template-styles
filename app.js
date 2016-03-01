@@ -21,11 +21,11 @@ function loadTemplate(name){
 
   // Get style overrides
   $.ajax({
-      url: "templates/"+ name+"/style.less",
-      success: function (resp) {
-        renderCSS(resp);
-      }
-    });
+    url: "templates/"+ name+"/style.css",
+    success: function (resp) {
+      injectCSS(resp);
+    }
+  });
 
   // Get html
   $.ajax({
@@ -36,15 +36,11 @@ function loadTemplate(name){
   });
 }
 
-
-function renderCSS(css) {
-  less.render(css).then(function(output) {
-    $("style.dynamic").remove();
-    var style = $("<style class='dynamic' />");
-    $("head").append(style);
-    style.html(output.css);
-  });
-
+function injectCSS(css) {
+  $("style.dynamic").remove();
+  var style = $("<style class='dynamic' />");
+  $("head").append(style);
+  style.html(css);
 }
 
 function buildContent(content){
