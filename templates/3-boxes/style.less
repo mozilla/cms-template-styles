@@ -1,175 +1,31 @@
-@transitionSpeed : .2s; // Page transition speed (menu / app name UI etc.)
-@overlayOpacity: .4; // Non-selected brick overlay
-
-@knowledge-navy: #007bb0;
-@yellow: #ffc958;
-@yellow-dark: darken(@yellow, 15%);
-
-.faint-button {
-  color: white;
-  text-decoration: none;
-  border: solid 2px rgba(255,255,255,.4);
-  border-bottom: solid 4px rgba(255,255,255,.4);
-  border-radius: 5px;
-  padding: 15px 20px;
-  margin: 0 5px;
-  text-align: center;
-}
-
 @charcoal: #4d4f53;
-
 @yellow: #ffc958;
 @yellow-dark: darken(@yellow, 15%);
-
-@navy: #007bb0;
-@navy-dark: darken(@navy, 15%);
-
-@green: #40b488;
-@green-dark: darken(@green, 15%);
-
-@teal: #00bfb8;
-@teal-dark: darken(@teal, 15%);
-
-@magenta: #ef2c65;
-@magenta-dark: darken(@magenta, 15%);
-
-#default {
-  .colour {
-    background: #F1F2F2;
-  }
-  .btn-default {
-    background: @yellow;
-    box-shadow: 0 2px 0 @yellow-dark;
-    color: @charcoal;
-  }
-}
-
-#navy {
-  .colour {
-    background: #E6F6F9;
-  }
-  .btn-default {
-    background: @navy;
-    box-shadow: 0 2px 0 @navy-dark;
-    color: white;
-  }
-}
-
-#green {
-  .colour {
-    background: #EDFAF6;
-  }
-  .btn-default {
-    background: @green;
-    box-shadow: 0 2px 0 @green-dark;
-    color: white;
-  }
-}
-
-#teal {
-  .colour {
-    background: #E4FBFA;
-  }
-  .btn-default {
-    background: @teal;
-    box-shadow: 0 2px 0 @teal-dark;
-    color: white;
-  }
-}
-
-#magenta {
-  .colour {
-    background: #FFEAF3;
-  }
-  .btn-default {
-    background: @magenta;
-    box-shadow: 0 2px 0 @magenta-dark;
-    color: white;
-  }
-}
-
-// font weights available 300,400,500
-body, html {
-    font-family: 'Fira Sans', sans-serif;
-    padding: 0;
-    margin: 0;
-}
-
-// Navbar style
-.navbar {
-  border-radius: 0;
-  background: #233751;
-  margin-bottom: 50px;
-}
-.navbar-brand {
-  float: right;
-  text-align: right;
-  color: white !important;
-  font-size: 16px !important;
-  font-weight: 500 !important;
-}
-.container {
-  margin-top: 80px;
-  margin-bottom: 60px;
-}
-///////////////
-
-article.intro {
-  margin-bottom: 30px;
-}
 
 .intro {
   font-size: 1.8rem;
   line-height: 2.6rem;
+  margin-bottom: 30px;
 }
 
-section article:nth-child(n+2){
-  text-align: center;
-}
-
-img {
-  margin-bottom: 15px;
-}
-
-p {
-  font-size: 1.1rem;
-  font-weight: 300;
-}
-
-.colour {
+.color-box {
   background: #F1F2F2;
   padding: 30px 15px;
-}
+  text-align: center;
 
-.btn-lg {
-  padding: 0.75rem 4rem;
-}
+  img {
+    margin-bottom: 15px;
+  }
 
-.btn-default {
-  background: @yellow;
-  box-shadow: 0 2px 0 @yellow-dark;
-  line-height: 29px;
-}
+  p {
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
 
-
-.animation-example {
-  -webkit-animation-name: example;
-  -webkit-animation-duration:  .4s;
-  -webkit-animation-iteration-count: 3;
-  -webkit-animation-delay: .5s;
-}
-
-@-webkit-keyframes example {
-    0% {
-        -webkit-transform: scale(1.5);
-        opacity: .5;
-    }
-    50%{
-        -webkit-transform: scale(.7);
-        opacity: .5;
-    }
-    100% {
-        -webkit-transform: scale(.7);
-        opacity: 0;
-    }
+  .btn {
+    padding: 0.75rem 4rem;
+    background: @yellow;
+    box-shadow: 0 2px 0 @yellow-dark;
+    line-height: 29px;
+  }
 }

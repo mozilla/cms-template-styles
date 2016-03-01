@@ -1,5 +1,5 @@
 // Colors, based on the primary
-@primary: #222;
+@primary: #F09C3C;
 @primary-darkest: darken(@primary, 10%);     // Selected state in nav
 @primary-dark:  darken(@primary, 5%);        // Hover state in nav
 @primary-light: lighten(@primary, 35%);      // Borders & horizontal rules
@@ -20,7 +20,7 @@ ul.boxes {
      display: flex;
      align-content: stretch;
      align-items: stretch;
-     background: @primary-lightest;
+     background: @primary-light;
 
      &:before {
        display: none;
@@ -29,7 +29,6 @@ ul.boxes {
      a {
        display: block;
        padding: 10px 14px;
-
        border-radius: 2px;
        color: @primary;
        text-decoration: none;
@@ -37,19 +36,19 @@ ul.boxes {
        flex: 1;
 
        &:hover {
-         background: darken(@primary-lightest,5%);
+         background: darken(@primary-light,5%);
        }
      }
    }
 
- }
+}
 
- ul {
-   padding: 0;
-     -webkit-column-count: 2;
-        -moz-column-count: 2;
-             column-count: 2;
-     -webkit-column-gap: 30px;
-        -moz-column-gap: 30px;
-             column-gap: 30px;
- }
+ul {
+ padding: 0;
+   -webkit-column-count: 2;
+      -moz-column-count: 2;
+           column-count: 2;
+   -webkit-column-gap: 30px;
+      -moz-column-gap: 30px;
+           column-gap: 30px;
+}

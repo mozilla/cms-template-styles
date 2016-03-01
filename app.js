@@ -1,12 +1,19 @@
 $(document).ready(function(){
-  console.log("hello");
-  loadTemplate("3-boxes");
+
+
+
+  var hash = window.location.hash;
+  if(hash.length > 0) {
+    hash = hash.replace("#","");
+    console.log(hash);
+    loadTemplate(hash);
+  } else {
+    loadTemplate("3-boxes");
+  }
 
   $("#template-menu").on("click","a",function(){
     loadTemplate($(this).attr("template"));
-    return false;
   });
-
 });
 
 var less;
