@@ -5,8 +5,8 @@
   "scripts": {
     "start": "npm run build && npm-run-all --parallel server watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "live-server ./demo --watch=healthcheck --port=1980",
-    "watch": "chokidar 'src' -c 'npm run build'",
+    "server": "live-server ./demo --watch=healthcheck.txt --port=1980",
+    "watch": "chokidar 'src' 'node_modules/foxlight/dest/' -c 'npm run build'",
     "build": "mkdirp demo && npm-run-all --parallel build:** && npm run healthcheck",
     "build:static": "ncp src demo",
     "build:scss": "node-sass src/templates/3-boxes/style.scss demo/templates/3-boxes/style.css",
