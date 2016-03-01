@@ -1,9 +1,9 @@
 // Colors, based on the primary
-@primary: #F09C3C;
-@primary-darkest: darken(@primary, 10%);     // Selected state in nav
-@primary-dark:  darken(@primary, 5%);        // Hover state in nav
-@primary-light: lighten(@primary, 35%);      // Borders & horizontal rules
-@primary-lightest: lighten(@primary, 50%);   // Background for Example
+$primary: #F09C3C;
+$primary-darkest: darken($primary, 10%);     // Selected state in nav
+$primary-dark:  darken($primary, 5%);        // Hover state in nav
+$primary-light: lighten($primary, 35%);      // Borders & horizontal rules
+$primary-lightest: lighten($primary, 50%);   // Background for Example
 
 ul.boxes {
    padding: 0;
@@ -20,7 +20,7 @@ ul.boxes {
      display: flex;
      align-content: stretch;
      align-items: stretch;
-     background: @primary-light;
+     background: $primary-light;
 
      &:before {
        display: none;
@@ -30,13 +30,13 @@ ul.boxes {
        display: block;
        padding: 10px 14px;
        border-radius: 2px;
-       color: @primary;
+       color: $primary;
        text-decoration: none;
 
        flex: 1;
 
        &:hover {
-         background: darken(@primary-light,5%);
+         background: darken($primary-light,5%);
        }
      }
    }

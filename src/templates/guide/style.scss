@@ -1,12 +1,12 @@
-@primary: #F09C3C;                           // Base color & sidebar background
+$primary: #F09C3C;                           // Base color & sidebar background
 
 // Colors, based on the primary
-@primary-darkest: darken(@primary, 10%);     // Selected state in nav
-@primary-dark:  darken(@primary, 5%);        // Hover state in nav
-@primary-light: lighten(@primary, 35%);      // Borders & horizontal rules
+$primary-darkest: darken($primary, 10%);     // Selected state in nav
+$primary-dark:  darken($primary, 5%);        // Hover state in nav
+$primary-light: lighten($primary, 35%);      // Borders & horizontal rules
 
 // Layout
-@aside-width: 230px;          // Width of the navigation side bar
+$aside-width: 230px;          // Width of the navigation side bar
 
 // The main content wrapper
 
@@ -14,7 +14,7 @@ article {
   max-width: 750px;
   min-width: 500px;
   position: relative;
-  padding: 20px 0 40px @aside-width + 65;
+  padding: 20px 0 40px $aside-width + 65;
   margin-right: 55px;
   z-index: 1;
 
@@ -46,15 +46,15 @@ article {
       height: 2px;
       top: -2px;
       width: 50%;
-      background: darken(@primary-light, 5%);
+      background: darken($primary-light, 5%);
       left: 25%;
     }
   }
 
   .example {
     margin: 35px 0 40px 0;
-    background: @primary-light;
-    color: @primary-darkest;
+    background: $primary-light;
+    color: $primary-darkest;
     padding: 30px 35px;
   }
 }
@@ -63,17 +63,17 @@ article {
 
 aside {
   z-index: 2;
-  width: @aside-width;
+  width: $aside-width;
   position: fixed;
   top: 0;
 
   &:before {
-    background: @primary;
+    background: $primary;
     content: "";
     position: fixed;
     top: 0;
     height: 100vh;
-    width: @aside-width;
+    width: $aside-width;
     z-index: 1;
   }
 
@@ -117,13 +117,13 @@ nav {
     }
 
     &.selected, &.selected:hover {
-      background: @primary-darkest;
+      background: $primary-darkest;
       color: white;
       font-weight: 500;
     }
 
     &:hover {
-      background: @primary-dark;
+      background: $primary-dark;
       color: rgba(255,255,255,1);
       text-decoration: none;
       cursor: pointer;
@@ -131,7 +131,7 @@ nav {
 
     &:after {
       content: "";
-      background-color: @primary-darkest;
+      background-color: $primary-darkest;
       background-image: ~"url(templates/guide/images/nav-selected-indicator-mask.svg)";
       background-position: right;
       background-repeat: no-repeat;
@@ -158,7 +158,7 @@ nav {
 }
 
 // Print styles
-@media print {
+$media print {
   aside {
     display: none;
   }
@@ -170,7 +170,3 @@ nav {
     max-width: 100%;
   }
 }
-
-
-
-
