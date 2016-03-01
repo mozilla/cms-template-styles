@@ -1,8 +1,6 @@
 $(document).ready(function(){
-
-
-
   var hash = window.location.hash;
+
   if(hash.length > 0) {
     hash = hash.replace("#","");
     console.log(hash);
@@ -21,7 +19,7 @@ function loadTemplate(name){
 
   // Get style overrides
   $.ajax({
-    url: "templates/"+ name+"/style.css",
+    url: "../templates/"+ name+"/style.css",
     success: function (resp) {
       injectCSS(resp);
     }
@@ -29,7 +27,7 @@ function loadTemplate(name){
 
   // Get html
   $.ajax({
-    url: "templates/"+ name+"/index.html",
+    url: "../templates/"+ name+"/index.html",
     success: function (resp) {
       buildContent(resp);
     }
