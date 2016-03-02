@@ -20,6 +20,7 @@ Templates for the Mozilla Foundation CMS.
 
 ```
 ├── demo <- Contains compiled code. Don't edit anything in this folder!
+├── scripts <- Code used by npm scripts.
 └── src
     ├── app.js <- Code for running the template previewer.
     ├── index.html <- Shell for template previews.
