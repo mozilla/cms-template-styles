@@ -28,7 +28,7 @@ Templates for the Mozilla Foundation CMS.
         ├── sample-template
         │   ├── images <- Any images used by the template
         │   ├── index.html <- Template HTML
-        │   └── style.scss <- Template SCSS
+        │   └── style.scss <- Template-specific SCSS
 ```
 
 ## File Naming Conventions

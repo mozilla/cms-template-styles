@@ -83,13 +83,13 @@ aside {
     height: 150px;
     width: 170px;
     margin: 22px 0 0 30px;
-    background-image: ~"url(templates/guide/images/web-lit-logo.svg)";
+    background-image: "url(templates/guide/images/web-lit-logo.svg)";
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
 
     img {
-      width: ~"calc(100% - 20px)";
+      width: "calc(100% - 20px)";
     }
   }
 }
@@ -132,7 +132,7 @@ nav {
     &:after {
       content: "";
       background-color: $primary-darkest;
-      background-image: ~"url(templates/guide/images/nav-selected-indicator-mask.svg)";
+      background-image: "url(templates/guide/images/nav-selected-indicator-mask.svg)";
       background-position: right;
       background-repeat: no-repeat;
       background-size: cover;
@@ -154,19 +154,5 @@ nav {
         right: -15px;
       }
     }
-  }
-}
-
-// Print styles
-$media print {
-  aside {
-    display: none;
-  }
-
-  article {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    max-width: 100%;
   }
 }
