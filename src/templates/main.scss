@@ -1,0 +1,98 @@
+@import '../../node_modules/mozmaker/src/scss/custom/colors';
+
+@mixin theme($color) {
+  $primary: $color;
+  $primary-darkest: darken($color, 10%);
+  $primary-dark:  darken($color, 5%);
+  $primary-light: lighten($color, 35%);
+  $primary-lightest: lighten($color, 50%);
+
+  .jumbotron {
+    background: $primary;
+  }
+
+  .boxes {
+    li {
+      background: $primary-light;
+
+      a {
+        color: $primary;
+
+        &:hover {
+          background: darken($primary-light, 5%);
+        }
+      }
+    }
+  }
+
+  .example {
+    border-left: 2px solid $primary-darkest;
+    color: $primary-darkest;
+    background: $primary-light;
+  }
+
+  aside {
+    &:before {
+      background: $primary;
+    }
+  }
+
+  nav {
+    a {
+      &:hover {
+        background: $primary-dark;
+      }
+
+      &.selected,
+      &.selected {
+        &:hover {
+          background: $primary-darkest;
+        }
+      }
+
+      &:after {
+        background: $primary-darkest;
+      }
+    }
+  }
+
+  article {
+    h2 {
+      &:before {
+        background: darken($primary-light, 5%);
+      }
+    }
+  }
+}
+
+.theme--navy {
+  @include theme($knowledge-navy);
+}
+
+.theme--orange {
+  @include theme($orange);
+}
+
+.theme--blue {
+  @include theme($brilliant-blue);
+}
+
+.theme--teal {
+  @include theme($teach-teal);
+}
+
+.theme--green {
+  @include theme($guided-green);
+}
+
+.theme--magenta {
+  @include theme($maker-magenta);
+}
+
+.theme--yellow {
+  @include theme($youth-yellow);
+}
+
+.theme--charcoal {
+  @include theme($charcoal);
+}
