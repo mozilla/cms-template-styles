@@ -12,7 +12,7 @@
     "server": "live-server ./demo --watch=healthcheck.txt --port=1980",
     "start": "npm run build && npm-run-all --parallel server watch",
     "test": "npm-run-all test:**",
-    "test:js": "eslint --config ./node_modules/mofo-style/.eslintrc.yaml --env node --env es6 scripts/*.js",
+    "test:js": "eslint --config .eslintrc.yaml scripts/*.js",
     "test:scss": "sass-lint -c node_modules/mofo-style/.sass-lint.yml --verbose --no-exit src/**/*.scss",
     "watch": "chokidar 'src' 'node_modules/foxlight/dest/' -c 'npm run build'"
   },
