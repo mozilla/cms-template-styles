@@ -11,10 +11,10 @@ $aside-width: 230px;          // Width of the navigation side bar
 // The main content wrapper
 
 article {
-  max-width: 750px;
+  max-width: 960px;
   min-width: 500px;
   position: relative;
-  padding: 20px 0 40px $aside-width + 65;
+  padding: 20px 0 40px $aside-width + 55;
   margin-right: 55px;
   z-index: 1;
 
@@ -54,6 +54,7 @@ article {
   .example {
     margin: 35px 0 40px 0;
     background: $primary-light;
+    border-left: 2px solid $primary-darkest;
     color: $primary-darkest;
     padding: 30px 35px;
   }

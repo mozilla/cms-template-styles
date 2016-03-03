@@ -5,12 +5,16 @@ $primary-dark:  darken($primary, 5%);        // Hover state in nav
 $primary-light: lighten($primary, 35%);      // Borders & horizontal rules
 $primary-lightest: lighten($primary, 50%);   // Background for Example
 
+.jumbotron {
+  background: $primary;
+}
+
 ul.boxes {
    padding: 0;
    list-style-type: none;
    display: flex;
    justify-content: space-between;
-   margin: 0 -10px;
+   margin: 0 -10px 30px -10px;
 
    li {
      list-style-type: none;
@@ -21,6 +25,7 @@ ul.boxes {
      align-content: stretch;
      align-items: stretch;
      background: $primary-light;
+     border-radius: 5px;
 
      &:before {
        display: none;
@@ -31,8 +36,10 @@ ul.boxes {
        padding: 10px 14px;
        border-radius: 2px;
        color: $primary;
+       font-size: 1rem;
+       line-height: 1.2rem;
+       font-weight: 400;
        text-decoration: none;
-
        flex: 1;
 
        &:hover {
@@ -45,10 +52,14 @@ ul.boxes {
 
 ul {
  padding: 0;
-   -webkit-column-count: 2;
-      -moz-column-count: 2;
-           column-count: 2;
-   -webkit-column-gap: 30px;
-      -moz-column-gap: 30px;
-           column-gap: 30px;
+ -webkit-column-count: 2;
+ -moz-column-count: 2;
+ column-count: 2;
+ -webkit-column-gap: 30px;
+ -moz-column-gap: 30px;
+ column-gap: 30px;
+}
+
+.jumbotron {
+  border-radius: 0px;
 }
