@@ -1,0 +1,36 @@
+{
+  "name": "cms-template-styles",
+  "version": "0.1.0",
+  "description": "Foxlight Templates",
+  "repository": "https://github.com/mozilla/cms-template-styles",
+  "scripts": {
+    "build": "mkdirp demo && npm-run-all --parallel build:** && npm run healthcheck",
+    "build:dependencies": "ncp node_modules/jquery/dist/jquery.min.js demo/jquery.min.js && ncp node_modules/foxlight/dest/css/foxlight.css demo/foxlight.css",
+    "build:scss": "node scripts/build-scss.js",
+    "build:static": "ncp src demo",
+    "healthcheck": "node scripts/healthcheck.js > demo/healthcheck.txt",
+    "server": "live-server ./demo --watch=healthcheck.txt --port=1980",
+    "start": "npm run build && npm-run-all --parallel server watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:js": "eslint --config ./node_modules/mofo-style/.eslintrc.yaml --env node --env es6 scripts/*.js",
+    "watch": "chokidar 'src' 'node_modules/foxlight/dest/' -c 'npm run build'"
+  },
+  "author": "Mozilla",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "foxlight": "https://github.com/mozilla/foxlight#gh-pages",
+    "jquery": "2.2.1"
+  },
+  "devDependencies": {
+    "chokidar": "^1.4.2",
+    "chokidar-cli": "^1.2.0",
+    "eslint": "^2.2.0",
+    "live-server": "^0.9.1",
+    "mofo-style": "^2.3.0",
+    "ncp": "^2.0.0",
+    "node-sass": "^3.4.2",
+    "npm-run-all": "^1.5.1",
+    "sass-lint": "^1.5.0",
+    "shelljs": "^0.6.0"
+  }
+}

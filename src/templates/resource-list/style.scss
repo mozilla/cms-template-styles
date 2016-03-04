@@ -1,0 +1,50 @@
+@import "../main";
+
+ul.boxes {
+   padding: 0;
+   list-style-type: none;
+   display: flex;
+   justify-content: space-between;
+   margin: 0 -10px 30px -10px;
+
+   li {
+     list-style-type: none;
+     flex: 1;
+     margin: 10px;
+     height: 100px;
+     display: flex;
+     align-content: stretch;
+     align-items: stretch;
+     border-radius: 5px;
+
+     &:before {
+       display: none;
+     }
+
+     a {
+       display: block;
+       padding: 10px 14px;
+       border-radius: 2px;
+       font-size: 1rem;
+       line-height: 1.2rem;
+       font-weight: 400;
+       text-decoration: none;
+       flex: 1;
+     }
+   }
+
+}
+
+ul {
+ padding: 0;
+ -webkit-column-count: 2;
+ -moz-column-count: 2;
+ column-count: 2;
+ -webkit-column-gap: 30px;
+ -moz-column-gap: 30px;
+ column-gap: 30px;
+}
+
+.jumbotron {
+  border-radius: 0px;
+}
