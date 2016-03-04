@@ -1,6 +1,4 @@
-* {
-  border: 10px solid red;
-}
+@import "../main";
 
 ul.boxes {
    padding: 0;
@@ -17,7 +15,6 @@ ul.boxes {
      display: flex;
      align-content: stretch;
      align-items: stretch;
-     background: $primary-light;
      border-radius: 5px;
 
      &:before {
@@ -28,16 +25,11 @@ ul.boxes {
        display: block;
        padding: 10px 14px;
        border-radius: 2px;
-       color: $primary;
        font-size: 1rem;
        line-height: 1.2rem;
        font-weight: 400;
        text-decoration: none;
        flex: 1;
-
-       &:hover {
-         background: darken($primary-light,5%);
-       }
      }
    }
 
