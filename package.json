@@ -1,11 +1,11 @@
 {
-  "name": "cms-template-styles",
+  "name": "mozmaker-templates",
   "version": "0.1.0",
-  "description": "Foxlight Templates",
-  "repository": "https://github.com/mozilla/cms-template-styles",
+  "description": "Mozmaker Templates",
+  "repository": "https://github.com/mozilla/mozmaker-templates",
   "scripts": {
     "build": "mkdirp demo && npm-run-all --parallel build:** && npm run healthcheck",
-    "build:dependencies": "ncp node_modules/jquery/dist/jquery.min.js demo/jquery.min.js && ncp node_modules/foxlight/dest/css/foxlight.css demo/foxlight.css",
+    "build:dependencies": "ncp node_modules/jquery/dist/jquery.min.js demo/jquery.min.js && ncp node_modules/mozmaker/dest/css/mozmaker.css demo/mozmaker.css",
     "build:scss": "node scripts/build-scss.js",
     "build:static": "ncp src demo",
     "healthcheck": "node scripts/healthcheck.js > demo/healthcheck.txt",
@@ -14,12 +14,12 @@
     "test": "npm-run-all test:**",
     "test:js": "eslint --config ./node_modules/mofo-style/.eslintrc.yaml --env node --env es6 scripts/*.js",
     "test:scss": "sass-lint -c node_modules/mofo-style/.sass-lint.yml --verbose --no-exit src/**/*.scss",
-    "watch": "chokidar 'src' 'node_modules/foxlight/dest/' -c 'npm run build'"
+    "watch": "chokidar 'src' 'node_modules/mozmaker/dest/' -c 'npm run build'"
   },
   "author": "Mozilla",
   "license": "MPL-2.0",
   "dependencies": {
-    "foxlight": "https://github.com/mozilla/foxlight#gh-pages",
+    "mozmaker": "https://github.com/mozilla/mozmaker#gh-pages",
     "jquery": "2.2.1"
   },
   "devDependencies": {
