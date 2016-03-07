@@ -6,6 +6,7 @@
   $primary-dark:  darken($color, 5%);
   $primary-light: lighten($color, 35%);
   $primary-lightest: lighten($color, 50%);
+  $white: #fff;
 
   .jumbotron {
     background: $primary;
@@ -61,6 +62,25 @@
       &:before {
         background: darken($primary-light, 5%);
       }
+    }
+  }
+
+  .callout-box {
+    background: $primary-light;
+
+    * {
+      color: $primary-darkest;
+    }
+
+    h2 {
+      background: $primary-darkest;
+      color: $white;
+    }
+  }
+
+  .upcoming-workshops {
+    li {
+      border-bottom-color: $primary-lightest;
     }
   }
 }
