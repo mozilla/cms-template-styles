@@ -1,20 +1,13 @@
-$primary: #F09C3C;                           // Base color & sidebar background
-
-// Colors, based on the primary
-$primary-darkest: darken($primary, 10%);     // Selected state in nav
-$primary-dark:  darken($primary, 5%);        // Hover state in nav
-$primary-light: lighten($primary, 35%);      // Borders & horizontal rules
+@import "../main";
 
 // Layout
 $aside-width: 230px;          // Width of the navigation side bar
 
-// The main content wrapper
-
 article {
-  max-width: 750px;
+  max-width: 960px;
   min-width: 500px;
   position: relative;
-  padding: 20px 0 40px $aside-width + 65;
+  padding: 20px 0 40px $aside-width + 55;
   margin-right: 55px;
   z-index: 1;
 
@@ -46,15 +39,12 @@ article {
       height: 2px;
       top: -2px;
       width: 50%;
-      background: darken($primary-light, 5%);
       left: 25%;
     }
   }
 
   .example {
     margin: 35px 0 40px 0;
-    background: $primary-light;
-    color: $primary-darkest;
     padding: 30px 35px;
   }
 }
@@ -68,7 +58,6 @@ aside {
   top: 0;
 
   &:before {
-    background: $primary;
     content: "";
     position: fixed;
     top: 0;
@@ -83,13 +72,13 @@ aside {
     height: 150px;
     width: 170px;
     margin: 22px 0 0 30px;
-    background-image: "url(templates/guide/images/web-lit-logo.svg)";
+    background-image: url(templates/guide/images/web-lit-logo.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
 
     img {
-      width: "calc(100% - 20px)";
+      width: calc(100% - 20px);
     }
   }
 }
@@ -117,13 +106,11 @@ nav {
     }
 
     &.selected, &.selected:hover {
-      background: $primary-darkest;
       color: white;
       font-weight: 500;
     }
 
     &:hover {
-      background: $primary-dark;
       color: rgba(255,255,255,1);
       text-decoration: none;
       cursor: pointer;
@@ -131,8 +118,7 @@ nav {
 
     &:after {
       content: "";
-      background-color: $primary-darkest;
-      background-image: "url(templates/guide/images/nav-selected-indicator-mask.svg)";
+      background-image: url(templates/guide/images/nav-selected-indicator-mask.svg);
       background-position: right;
       background-repeat: no-repeat;
       background-size: cover;
