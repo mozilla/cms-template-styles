@@ -4,7 +4,7 @@
 
 Templates for the Mozilla Foundation CMS.
 
-[http://mozilla.github.io/mozmaker-templates/](http://mozilla.github.io/mozmaker-templates/)
+[http://mozilla.github.io/mozmaker-templates/demo/](http://mozilla.github.io/mozmaker-templates/demo/)
 
 ## Templates
 
