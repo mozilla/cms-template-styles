@@ -19,7 +19,7 @@
   "author": "Mozilla",
   "license": "MPL-2.0",
   "dependencies": {
-    "mozmaker": "https://github.com/mozilla/mozmaker#gh-pages",
+    "mozmaker": "0.2.1",
     "jquery": "2.2.1"
   },
   "devDependencies": {
