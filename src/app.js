@@ -1,6 +1,7 @@
 "use strict";
 
 (function () {
+
   var preview = {
     init: function () {
       var hash = window.location.hash;
@@ -15,6 +16,13 @@
       $(`#template-menu`).on(`click`, `a`, (event) => {
         this.loadTemplate($(event.target).attr(`template`));
       });
+
+      $(`#color-switcher`).on(`click`, `a`, (event) => {
+        this.setColor($(event.target).text());
+      });
+    },
+    setColor: function (color) {
+      $(`.theme`).attr(`class`, `theme theme--${color}`);
     },
     loadTemplate: function (name) {
       // Get style overrides
@@ -29,7 +37,7 @@
       $.ajax({
         url: `templates/${name}/index.html`,
         success: (resp) => {
-          this.buildContent(resp);
+          this.injectHTML(resp);
         }
       });
     },
@@ -41,9 +49,8 @@
 
       style.html(css);
     },
-    buildContent: function (content) {
-      $(`body > *:not(#template-menu)`).remove();
-      $(`body`).append(content);
+    injectHTML: function (content) {
+      $(`#template`).html(content);
     }
   };
 

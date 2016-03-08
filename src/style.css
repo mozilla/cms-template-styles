@@ -1,13 +1,20 @@
-#template-menu {
+#toggles {
   position: fixed;
   top: 20px;
   right: 20px;
   width: 100px;
-  background: rgba(0, 0, 0, 0.8);
   z-index: 99999999999999;
-  padding: 10px;
 }
-#template-menu a {
+
+.toggle {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.toggle a,
+.toggle a:link {
+  cursor: pointer;
   margin: 0;
   margin-bottom: 10px;
   display: block;
@@ -15,6 +22,7 @@
   font-size: 12px;
   line-height: 12px;
 }
-#template-menu a:last-child {
+
+.toggle a:last-child {
   margin-bottom: 0;
 }
