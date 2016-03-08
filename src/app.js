@@ -1,47 +1,59 @@
-$(document).ready(function(){
-  var hash = window.location.hash;
+"use strict";
 
-  if(hash.length > 0) {
-    hash = hash.replace("#","");
-    console.log(hash);
-    loadTemplate(hash);
-  } else {
-    loadTemplate("3-boxes");
-  }
+(function () {
 
-  $("#template-menu").on("click","a",function(){
-    loadTemplate($(this).attr("template"));
-  });
-});
+  var preview = {
+    init: function () {
+      var hash = window.location.hash;
 
-var less;
-function loadTemplate(name){
+      if(hash.length > 0) {
+        hash = hash.replace(`#`,``);
+        this.loadTemplate(hash);
+      } else {
+        this.loadTemplate(`3-boxes`);
+      }
 
-  // Get style overrides
-  $.ajax({
-    url: "templates/"+ name+"/style.css",
-    success: function (resp) {
-      injectCSS(resp);
+      $(`#template-menu`).on(`click`, `a`, (event) => {
+        this.loadTemplate($(event.target).attr(`template`));
+      });
+
+      $(`#color-switcher`).on(`click`, `a`, (event) => {
+        this.setColor($(event.target).text());
+      });
+    },
+    setColor: function (color) {
+      $(`.theme`).attr(`class`, `theme theme--${color}`);
+    },
+    loadTemplate: function (name) {
+      // Get style overrides
+      $.ajax({
+        url: `templates/${name}/style.css`,
+        success: (resp) => {
+          this.injectCSS(resp);
+        }
+      });
+
+      // Get html
+      $.ajax({
+        url: `templates/${name}/index.html`,
+        success: (resp) => {
+          this.injectHTML(resp);
+        }
+      });
+    },
+    injectCSS: function (css) {
+      var style = $(`<style class='dynamic' />`);
+
+      $(`style.dynamic`).remove();
+      $(`head`).append(style);
+
+      style.html(css);
+    },
+    injectHTML: function (content) {
+      $(`#template`).html(content);
     }
-  });
+  };
 
-  // Get html
-  $.ajax({
-    url: "templates/"+ name+"/index.html",
-    success: function (resp) {
-      buildContent(resp);
-    }
-  });
-}
+  preview.init();
 
-function injectCSS(css) {
-  $("style.dynamic").remove();
-  var style = $("<style class='dynamic' />");
-  $("head").append(style);
-  style.html(css);
-}
-
-function buildContent(content){
-  $("body > *:not(#template-menu)").remove();
-  $("body").append(content)
-}
+})();
