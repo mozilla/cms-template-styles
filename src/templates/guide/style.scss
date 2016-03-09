@@ -1,15 +1,22 @@
-@import "../main";
+@import '../main';
 
 // Layout
-$aside-width: 230px;          // Width of the navigation side bar
+$aside-width-desktop: 300px;          // Width of the navigation side bar
+$aside-width-mobile: 220px;
+
+
+$percent-70: rgba(255, 255, 255, .7);
+$percent-100: rgba(255, 255, 255, 1);
 
 article {
-  max-width: 960px;
+  max-width: 1180px;
   min-width: 500px;
   position: relative;
-  padding: 20px 0 40px $aside-width + 55;
-  margin-right: 55px;
+  padding: 20px 0 40px $aside-width-desktop + 90;
   z-index: 1;
+  @media screen and (min-width: 544px) {
+    max-width: 1180px;
+  }
 
   .logo {
     position: relative;
@@ -23,10 +30,16 @@ article {
       }
     }
 
-    a:hover {
+    &:hover {
       background: none;
       opacity: .8;
     }
+  }
+
+  img {
+    max-width: 100%;
+    margin: 30px 0;
+
   }
 
   h2 {
@@ -34,12 +47,12 @@ article {
     padding-top: 30px;
 
     &:before {
-      content:"";
+      content: '';
       position: absolute;
       height: 2px;
       top: -2px;
-      width: 50%;
-      left: 25%;
+      width: 100%;
+      left: 0;
     }
   }
 
@@ -53,17 +66,23 @@ article {
 
 aside {
   z-index: 2;
-  width: $aside-width;
+  width: $aside-width-mobile;
   position: fixed;
   top: 0;
+  @media screen and (min-width: 1200px) {
+    width: $aside-width-desktop;
+  }
 
   &:before {
-    content: "";
+    content: '';
     position: fixed;
     top: 0;
     height: 100vh;
-    width: $aside-width;
+    width: $aside-width-mobile;
     z-index: 1;
+    @media screen and (min-width: 1200px) {
+      width: $aside-width-desktop;
+    }
   }
 
   .image {
@@ -83,7 +102,7 @@ aside {
   }
 }
 
-/* Left-side Navigation */
+// Left-side Navigation
 
 nav {
   padding: 20px 0 25px 0;
@@ -91,33 +110,28 @@ nav {
   position: relative;
   z-index: 2;
 
-  a:link, a {
+  a {
     display: block;
     position: relative;
     text-decoration: none;
-    color: rgba(255,255,255,.7);
+    color: $percent-70;
     padding: 18px 34px;
     transition: background .05s ease-out;
     font-size: 16px;
     line-height: auto;
 
     &:visited {
-      color: rgba(255,255,255,.7);
-    }
-
-    &.selected, &.selected:hover {
-      color: white;
-      font-weight: 500;
+      color: $percent-70;
     }
 
     &:hover {
-      color: rgba(255,255,255,1);
+      color: $percent-100;
       text-decoration: none;
       cursor: pointer;
     }
 
     &:after {
-      content: "";
+      content: '';
       background-image: url(templates/guide/images/nav-selected-indicator-mask.svg);
       background-position: right;
       background-repeat: no-repeat;
@@ -128,16 +142,21 @@ nav {
       top: 0;
       right: 0px;
       opacity: 1;
-      width: 0px;
+      width: 0;
       transition: all .075s ease-out;
     }
 
     &.selected {
-      color: rgba(255,255,255,1);
+      color: $percent-100;
 
       &:after {
         width: 15px;
         right: -15px;
+      }
+
+      &:hover {
+        color: $percent-100;
+        font-weight: 500;
       }
     }
   }
