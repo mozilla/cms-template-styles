@@ -1,5 +1,6 @@
 @import '../../node_modules/mozmaker/src/scss/custom/colors';
 
+
 @mixin theme($color) {
   $primary: $color;
   $primary-darkest: darken($color, 10%);
@@ -10,6 +11,11 @@
 
   .jumbotron {
     background: $primary;
+  }
+
+  .header-headline {
+    color: $primary;
+    border-bottom-color: $primary-light;
   }
 
   .boxes {
@@ -27,7 +33,6 @@
   }
 
   .example {
-    border-left: 2px solid $primary-darkest;
     color: $primary-darkest;
     background: $primary-light;
   }
@@ -40,19 +45,13 @@
 
   nav {
     a {
-      &:hover {
-        background: $primary-dark;
-      }
 
-      &.selected,
       &.selected {
+        background: $primary-darkest;
+
         &:hover {
           background: $primary-darkest;
         }
-      }
-
-      &:after {
-        background: $primary-darkest;
       }
     }
   }
