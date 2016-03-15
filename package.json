@@ -4,10 +4,14 @@
   "description": "Mozmaker Templates",
   "repository": "https://github.com/mozilla/mozmaker-templates",
   "scripts": {
-    "build": "mkdirp demo && npm-run-all --parallel build:** && npm run healthcheck",
+    "preversion": "git checkout master && git pull mozilla master && npm test",
+    "version": "npm run build && git add -f dist",
+    "postversion": "npm publish && git push mozilla --tags && git rm -r dist && git commit --amend --no-edit && git push mozilla master",
+    "build": "mkdirp demo && mkdirp dist && npm-run-all --parallel build:** && npm run post-build && npm run healthcheck",
     "build:dependencies": "ncp node_modules/jquery/dist/jquery.min.js demo/jquery.min.js && ncp node_modules/mozmaker/dest/css/mozmaker.css demo/mozmaker.css",
     "build:scss": "node scripts/build-scss.js",
     "build:static": "ncp src demo",
+    "post-build": "node scripts/build-dist.js",
     "healthcheck": "node scripts/healthcheck.js > demo/healthcheck.txt",
     "server": "live-server ./demo --watch=healthcheck.txt --port=1980",
     "start": "npm run build && npm-run-all --parallel server watch",
@@ -25,6 +29,7 @@
   "devDependencies": {
     "chokidar": "^1.4.2",
     "chokidar-cli": "^1.2.0",
+    "cpr": "^1.0.0",
     "eslint": "^2.2.0",
     "live-server": "^0.9.1",
     "mofo-style": "^2.3.0",
