@@ -5,7 +5,8 @@
 var cpr = require(`cpr`).cpr;
 
 cpr(`demo/templates/`, `dist`, {
-  filter: /scss/
+  filter: /scss/,
+  overwrite: true
 }, () => {
   console.log(`Created "dist" folder.`);
 });

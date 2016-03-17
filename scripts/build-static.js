@@ -3,7 +3,8 @@
 var cpr = require(`cpr`).cpr;
 
 cpr(`src/`, `demo/`, {
-  filter: /scss/
+  filter: /scss/,
+  overwrite: true
 }, () => {
   console.log(`Copied static assets.`);
 });
