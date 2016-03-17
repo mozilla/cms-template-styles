@@ -23,7 +23,7 @@
   "author": "Mozilla",
   "license": "MPL-2.0",
   "dependencies": {
-    "mozmaker": "0.2.8",
+    "mozmaker": "latest",
     "jquery": "2.2.1"
   },
   "devDependencies": {
