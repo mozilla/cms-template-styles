@@ -11,7 +11,6 @@ git checkout --orphan gh-pages
 rm .gitignore
 echo 'node_modules/' >> .gitignore
 echo '.DS_Store' >> .gitignore
-date > last-built.txt
 git add .
 git commit -m 'AUTOMATED BUILD AND DEPLOY.'
 git push mozilla gh-pages -f
