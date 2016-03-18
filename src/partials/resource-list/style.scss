@@ -1,4 +1,4 @@
-@import '../main';
+@import '../../main';
 
 .boxes {
   padding: 0;
@@ -40,12 +40,9 @@
 
 ul {
   padding: 0;
-  -moz-column-count: 1;
   column-count: 1;
-  -moz-column-gap: 50px;
   column-gap: 50px;
   @media screen and (min-width: 544px) {
-    -moz-column-count: 2;
     column-count: 2;
   }
 }
@@ -68,6 +65,7 @@ ul {
 
   .content {
     margin: 10px 0;
+
     p {
       margin: 0;
       max-width: 440px;

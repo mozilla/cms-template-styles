@@ -1,6 +1,4 @@
-@import "../../../node_modules/mozmaker/src/scss/custom/colors";
-
-$yellow-dark: darken($youth-yellow, 15%);
+@import '../../../node_modules/mozmaker/src/scss/custom/colors';
 
 .intro {
   font-size: 1.8rem;
@@ -24,8 +22,8 @@ $yellow-dark: darken($youth-yellow, 15%);
 
   .btn {
     padding: 0.75rem 4rem;
-    background: $youth-yellow;
-    box-shadow: 0 2px 0 $yellow-dark;
+    background: $flame-yellow;
+    box-shadow: 0 2px 0 darken($flame-yellow, 20%);
     line-height: 29px;
   }
 }

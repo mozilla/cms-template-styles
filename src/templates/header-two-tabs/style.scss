@@ -1,4 +1,4 @@
-@import "../main";
+@import '../../main';
 
 .content > div {
   display: none;
@@ -11,6 +11,7 @@
 
   input {
     display: none;
+
     &:checked + label {
       border-top-width: 3px;
       border-right-width: 3px;
@@ -22,10 +23,11 @@
         content: '';
         width: 100%;
         height: 3px;
-        left: 0px;
+        left: 0;
         bottom: -3px;
         background: $white;
       }
+
       p {
         position: relative;
         left: -3px;
@@ -48,19 +50,21 @@
     border-left-width: 0;
 
     border-style: solid;
-    border-color: rgba(0, 0, 0, 0);
+    border-color: transparent;
 
     &:before {
       position: absolute;
       content: '';
-      left: 0px;
+      left: 0;
       bottom: -3px;
       width: 100%;
       height: 3px;
     }
+
     &:hover {
       cursor: pointer;
     }
+
     p {
       display: inline-block;
       margin: 10px 0 5px 0;
@@ -71,28 +75,44 @@
   }
 }
 
-#tab1:checked ~ .content #content1,
-#tab2:checked ~ .content #content2 {
-  display: block;
+#tab1 {
+  &:checked ~ .content {
+    #content1 {
+      display: block;
+    }
+  }
+}
+
+#tab2 {
+  &:checked ~ .content {
+    #content2 {
+      display: block;
+    }
+  }
 }
 
 .image-headline {
   display: flex;
   align-items: center;
   margin: 20px 0 40px 0;
+
   .image-container {
     flex-shrink: 0;
+
     img {
       width: 210px;
       height: 210px;
       max-width: 100%;
     }
   }
+
   .content-container {
     margin-left: 30px;
+
     h3 {
       max-width: 550px;
     }
+
     > * {
       margin: 0;
     }
@@ -134,7 +154,7 @@
   width: 100%;
   height: 800px;
   margin: 30px 0 35px 0;
-  border: solid 2px #eee;
+  border: solid 2px darken($white, 7);
 }
 
 .open-etherpad {
@@ -143,11 +163,11 @@
 
 .video-wrapper {
   padding: 25px 25px 0 25px;
-  background: #eee;
+  background: darken($white, 7);
   margin: 0 0 25px 0;
 
   .workshop-video {
-    border: none;
+    border: 0;
     margin: 0 auto;
     display: block;
   }
@@ -156,18 +176,22 @@
 .workshops {
   padding: 0;
   margin: 0 0 40px 0;
+
   li {
     border-bottom-width: 2px;
     border-bottom-style: solid;
     padding: 40px 0;
     margin: 0;
+
     &:first-child {
       padding: 0 0 40px 0;
     }
+
     &:last-child {
-      border: none;
+      border: 0;
     }
   }
+
   p {
     margin: 0 0 5px 0;
     max-width: 840px;

@@ -10,11 +10,11 @@
         hash = hash.replace(`#`,``);
         this.loadTemplate(hash);
       } else {
-        this.loadTemplate(`3-boxes`);
+        this.loadTemplate(`templates/header-two-tabs`);
       }
 
-      $(`#template-menu`).on(`click`, `a`, (event) => {
-        this.loadTemplate($(event.target).attr(`template`));
+      $(`.loader`).on(`click`, `a`, (event) => {
+        this.loadTemplate($(event.target).attr(`href`).split(`#`)[1]);
       });
 
       $(`#color-switcher`).on(`click`, `a`, (event) => {
@@ -25,9 +25,10 @@
       $(`.theme`).attr(`class`, `theme theme--${color}`);
     },
     loadTemplate: function (name) {
+      console.log(`loadTemplate ${name}`);
       // Get style overrides
       $.ajax({
-        url: `templates/${name}/style.css`,
+        url: `${name}/style.css`,
         success: (resp) => {
           this.injectCSS(resp);
         }
@@ -35,7 +36,7 @@
 
       // Get html
       $.ajax({
-        url: `templates/${name}/index.html`,
+        url: `${name}/index.html`,
         success: (resp) => {
           this.injectHTML(resp);
         }
