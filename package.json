@@ -27,6 +27,7 @@
     "jquery": "2.2.1"
   },
   "devDependencies": {
+    "autoprefixer": "^6.3.3",
     "chokidar": "^1.4.2",
     "chokidar-cli": "^1.2.0",
     "cpr": "^1.0.0",
