@@ -45,3 +45,16 @@ Templates for the Mozilla Foundation CMS.
 If you want to co-develop Mozmaker locally and see changes reflected in this project, you can run `npm link` in the root of your Mozmaker repo and then `npm link mozmaker` in this repo. Once you've done this you should `npm start` Mozmaker and then you'll see your edits immediately reflected in the front end here.
 
 You can also import Mozmaker code, such as color variables, a la carte into your templates here since it's a dependency. For an example see `src/templates/3-boxes/style.scss`.
+
+## REST API
+
+This project contains a very basic REST API which is deployed as static JSON routes to GitHub Pages.
+
+The service is available at:
+
+`http://mozilla.github.io/mozmaker-templates/api`
+
+### Routes
+
+- `GET /partials` - Returns an array of partial IDs.
+- `GET /partial/PARTIAL_ID` - Returns an object containing the complete markup for the indicated partial.
