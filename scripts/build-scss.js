@@ -20,12 +20,8 @@ sourceFiles = sourceFiles.concat(shell.ls(`src/partials`).map(name => {
 sourceFiles.push(`main.scss`);
 
 // Filter out any missing SCSS files
-var filteredFiles = [];
-
-sourceFiles.forEach((file) => {
-  if (shell.test(`-e`, `src/${file}`)) {
-    filteredFiles.push(file);
-  }
+sourceFiles = sourceFiles.filter((path) => {
+  return shell.test(`-e`, `src/${path}`);
 });
 
 // Add vendor prefixes to unprefixed CSS
