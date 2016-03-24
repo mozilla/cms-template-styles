@@ -1,0 +1,45 @@
+{
+  "name": "mozmaker-templates",
+  "version": "0.2.0",
+  "description": "Mozmaker Templates",
+  "repository": "https://github.com/mozilla/mozmaker-templates",
+  "scripts": {
+    "preversion": "git checkout master && git pull mozilla master && npm test",
+    "version": "npm run build && git add -f dist",
+    "postversion": "npm publish && git push mozilla --tags && git rm -r dist && git commit --amend --no-edit && git push mozilla master",
+    "build": "rimraf demo dist && mkdirp demo dist && npm-run-all --parallel build:** && npm run post-build && npm run healthcheck",
+    "build:dependencies": "cp node_modules/jquery/dist/jquery.min.js demo/jquery.min.js && cp node_modules/mozmaker/dest/css/mozmaker.css demo/mozmaker.css",
+    "build:scss": "node scripts/build-scss.js",
+    "build:static": "node scripts/build-static.js",
+    "build:api": "node scripts/build-api.js",
+    "post-build": "node scripts/build-dist.js",
+    "healthcheck": "node scripts/healthcheck.js > demo/healthcheck.txt",
+    "server": "live-server ./demo --watch=healthcheck.txt --port=1980",
+    "server:api": "live-server ./api --port=1981",
+    "start": "npm run build && npm-run-all --parallel server watch",
+    "test": "npm-run-all test:**",
+    "test:js": "eslint --config .eslintrc.yaml scripts/*.js src/app.js",
+    "test:scss": "sass-lint -c node_modules/mofo-style/.sass-lint.yml --verbose --no-exit src/**/*.scss",
+    "watch": "chokidar 'src' 'node_modules/mozmaker/dest/' -c 'npm run build'"
+  },
+  "author": "Mozilla",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "mozmaker": "latest",
+    "jquery": "2.2.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.3",
+    "chokidar": "^1.4.2",
+    "chokidar-cli": "^1.2.0",
+    "cpr": "^1.0.0",
+    "eslint": "^2.2.0",
+    "live-server": "^0.9.1",
+    "mofo-style": "^2.3.0",
+    "node-sass": "^3.4.2",
+    "npm-run-all": "^1.5.1",
+    "rimraf": "^2.5.2",
+    "sass-lint": "^1.5.0",
+    "shelljs": "^0.6.0"
+  }
+}

@@ -1,0 +1,176 @@
+@import '../node_modules/mozmaker/src/scss/custom/colors';
+
+
+@mixin theme($color) {
+  $primary: $color;
+  $primary-darkest: darken($color, 10%);
+  $primary-dark:  darken($color, 5%);
+  $primary-light: lighten($color, 15%);
+  $primary-lightest: lighten($color, 40%);
+  $white: #fff;
+
+  .jumbotron {
+    background: $primary;
+  }
+
+  .header-headline {
+    color: $primary;
+    border-bottom-color: $primary-light;
+  }
+
+  .important-links {
+    li {
+      background: $primary-lightest;
+
+      a {
+        color: $primary-darkest;
+
+        &:hover {
+          background: darken($primary-light, 5%);
+        }
+      }
+    }
+  }
+
+  .color-box {
+
+    .btn {
+      background: $primary;
+      box-shadow: 0 2px 0 $primary-darkest;
+      color: $white;
+      transition: background 0.2s ease-in-out;
+
+      &:hover {
+        background: $primary-darkest;
+      }
+    }
+  }
+
+  .example {
+    color: $primary-darkest;
+    background: $primary-light;
+  }
+
+  aside {
+    &:before {
+      background: $primary;
+    }
+  }
+
+  nav {
+    a {
+
+      &.selected {
+        background: $primary-darkest;
+
+        &:hover {
+          background: $primary-darkest;
+        }
+      }
+    }
+  }
+
+  .tab-container {
+
+    input {
+      &:checked + label {
+        color: $primary-dark;
+        border-color: $primary-light;
+        background: none;
+      }
+    }
+
+    label {
+      color: $primary-light;
+      background: $primary-lightest;
+
+      &:before {
+        background: $primary-light;
+      }
+
+      &:hover {
+        color: $primary-dark;
+      }
+    }
+  }
+
+  article {
+    h2 {
+      &:before {
+        background: darken($primary-light, 5%);
+      }
+    }
+  }
+
+  .callout-box {
+    border: 3px solid $primary-lightest;
+
+    * {
+      color: $primary-darkest;
+    }
+
+    h2 {
+      background: $primary-darkest;
+      color: $white;
+    }
+  }
+
+  .workshops {
+    li {
+      border-bottom-color: $primary-lightest;
+    }
+
+    .upcoming {
+      border: 2px solid $primary-lightest;
+      color: $primary-lightest;
+    }
+  }
+}
+
+.theme--red {
+  @include theme($dino-red);
+}
+
+.theme--firefox-orange {
+  @include theme($firefox-orange);
+}
+
+.theme--market-orange {
+  @include theme($market-orange);
+}
+
+.theme--flame-yellow {
+  @include theme($flame-yellow);
+}
+
+.theme--gecko-green {
+  @include theme($gecko-green);
+}
+
+.theme--summit-teal {
+  @include theme($summit-teal);
+}
+
+.theme--mobile-blue {
+  @include theme($mobile-blue);
+}
+
+.theme--developer-blue {
+  @include theme($developer-blue);
+}
+
+.theme--nightly-blue {
+  @include theme($nightly-blue);
+}
+
+.theme--aurora-purple {
+  @include theme($aurora-purple);
+}
+
+.theme--bikeshed-magenta {
+  @include theme($bikeshed-magenta);
+}
+
+.theme--charcoal {
+  @include theme($charcoal);
+}
