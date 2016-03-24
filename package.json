@@ -7,7 +7,7 @@
     "preversion": "git checkout master && git pull mozilla master && npm test",
     "version": "npm run build && git add -f dist",
     "postversion": "npm publish && git push mozilla --tags && git rm -r dist && git commit --amend --no-edit && git push mozilla master",
-    "build": "mkdirp demo && mkdirp dist && npm-run-all --parallel build:** && npm run post-build && npm run healthcheck",
+    "build": "rimraf demo dist && mkdirp demo dist && npm-run-all --parallel build:** && npm run post-build && npm run healthcheck",
     "build:dependencies": "cp node_modules/jquery/dist/jquery.min.js demo/jquery.min.js && cp node_modules/mozmaker/dest/css/mozmaker.css demo/mozmaker.css",
     "build:scss": "node scripts/build-scss.js",
     "build:static": "node scripts/build-static.js",
@@ -38,6 +38,7 @@
     "mofo-style": "^2.3.0",
     "node-sass": "^3.4.2",
     "npm-run-all": "^1.5.1",
+    "rimraf": "^2.5.2",
     "sass-lint": "^1.5.0",
     "shelljs": "^0.6.0"
   }
