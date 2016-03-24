@@ -32,6 +32,20 @@
     }
   }
 
+  .color-box {
+
+    .btn {
+      background: $primary;
+      box-shadow: 0 2px 0 $primary-darkest;
+      color: $white;
+      transition: background 0.2s ease-in-out;
+
+      &:hover {
+        background: $primary-darkest;
+      }
+    }
+  }
+
   .example {
     color: $primary-darkest;
     background: $primary-light;
